@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="EVolSplat: Efficient Volume-based Gaussian Splatting for Urban View Synthesis">
-  <meta name="keywords" content="EVolSplat, GitHub Pages, XDimLab ">
+        content="EVolSplat4D: EVolSplat4D: Efficient Volume-based Gaussian Splatting for 4D Urban Scene Synthesis">
+  <meta name="keywords" content="EVolSplat4D, GitHub Pages, XDimLab ">
   <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>EVolSplat: Efficient Volume-based Gaussian Splatting for Urban View Synthesis</title>
+  <title>EVolSplat4D: Efficient Volume-based Gaussian Splatting for Urban View Synthesis</title>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FWSVCGZTG"></script>
@@ -62,37 +62,40 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">EVolSplat: Efficient Volume-based Gaussian Splatting for Urban View Synthesis</h1>
-          <h3 class="title has-text-centered">CVPR 2025</h3>
+          <h1 class="title is-1 publication-title">EVolSplat4D: Efficient Volume-based Gaussian Splatting for 4D Urban Scene Synthesis</h1>
+          <!-- <h3 class="title has-text-centered">CVPR 2025</h3> -->
+          <img src="images/evolsplat4d.png" alt="Your Image" style="height: 80px; margin-bottom: 20px; vertical-align: middle;">
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://miaosheng1.github.io/" target="_blank" rel="noopener noreferrer">
                 Sheng Miao</a><sup>1</sup>,
             </span>
+
             <span class="author-block">
               <a href="https://jaceyhuang.github.io/" target="_blank" rel="noopener noreferrer">
-                Jiaxin Huang</a><sup>1*</sup>,
+                Sijin Li</a><sup>1</sup>,
             </span>
+
             <span class="author-block">
               <a target="_blank" rel="noopener noreferrer">
                 Dongfeng Bai</a><sup>2</sup>,
             </span>
+
             <span class="author-block">
               <a target="_blank" rel="noopener noreferrer">
-                Xu Yan</a><sup>2</sup>,
+                Pan Wang</a><sup>2</sup>,
             </span>
-            <span class="author-block">
-              <a href="https://hyzhou404.github.io/" target="_blank" rel="noopener noreferrer">
-                Hongyu Zhou</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://ywang-zju.github.io/" target="_blank" rel="noopener noreferrer">
-                Yue Wang</a><sup>1</sup>,
-            </span>
+
             <span class="author-block">
               <a target="_blank" rel="noopener noreferrer">
                 Bingbing Liu</a><sup>2</sup>,
             </span>
+            
+            <span class="author-block">
+              <a href="https://ywang-zju.github.io/" target="_blank" rel="noopener noreferrer">
+                Yue Wang</a><sup>1</sup>,
+            </span>
+  
             <span class="author-block">
               <a href="https://www.cvlibs.net/" target="_blank" rel="noopener noreferrer">
                 Andreas Geiger</a><sup>3,4</sup>,
@@ -122,7 +125,7 @@
                 </a>
               </span> -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2503.20168" target="_blank" rel="noopener noreferrer"
+                <a href="https://arxiv.org" target="_blank" rel="noopener noreferrer"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf" style="color: cornflowerblue"></i>
@@ -132,7 +135,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/Miaosheng1/EVolSplat" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -142,13 +145,13 @@
                  <!-- Dataset Link. -->
               <span class="link-block">
                 <!-- <a href="" target="_blank" rel="noopener noreferrer" -->
-                <a href="https://huggingface.co/datasets/cookiemiao/EvolSplat/tree/main" target="_blank" rel="noopener noreferrer"
+                <!-- <a href="https://huggingface.co/datasets/cookiemiao/EVolSplat4D/tree/main" target="_blank" rel="noopener noreferrer"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <img src="images/huggingface.png">
                   </span>
                   <span>Hugging face</span>
-                </a>
+                </a> -->
               </span>
               </span>
             </div>
@@ -175,24 +178,16 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Overview</h2>
-        <img id="teaser" width="100%" src="./images/Teaser_v3.svg" alt="Teaser image demonstrating Marigold depth estimation."/>
+        <img id="teaser" width="100%" src="./images/teaser.png" alt="Teaser image demonstrating Marigold depth estimation."/>
         <div class="content has-text-justified">
           <p>
-            This paper presents EVolSplat, a method for efficient urban
-            scene reconstruction in a feed-forward manner. Unlike previous
-            pixel-aligned 3DGS frameworks, we use geometric
-            priors to construct a global volume and predict a standalone
-            3D representation, achieving state-of-the-art performance
-            across several street-view datasets and enabling real-time
-            rendering, making it well-suited for urban scenes.
+            We propose EVolSplat4D, a unified feed-forward reconstruction model tailored for static & dynamic urban scenes that
+            achieves real-time rendering speeds. Leveraging both camera and LiDAR cues as inputs, EVolSplat4D can produce novel,
+            photo-realistic renderings in a very short time (approximately 1.3s), achieving quality that is comparable to
+            time-consuming per-scene optimization methods. EVolSplat4D also supports various downstream applications, including
+            high-fidelity scene editing and scene decomposition.
           </p>
         </div>
-        <!-- <div class="content has-text-justified">
-          <p>
-            The gallery below presents the holistic urban scene understanding results of <span class="methodname">HUGS</span> on the open autonomous driving dataset.
-            Use the slider and gestures to reveal details on both sides.
-          </p>
-        </div> -->
       </div>
     </div>
     <!--/ Abstract. -->
@@ -212,180 +207,27 @@
 </section>
 
 
-<h3 class="title has-text-centered">
-  Comparison with Feed-Forward Methods
-</h3>
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel-vertical" class="carousel results-carousel">
-
-        <div class="fouritem">
-          <div class="twentytwenty-container twentytwenty-container-top11">
-            <div class="cmpcontent">
-              <img src="./images/baseline/seq_1741/ours.png">
-            </div>
-            <div class="cmpcontent">
-              <img src="./images/baseline/seq_1741/mvsplat_001.png">
-            </div>
-          </div>
-          <div class="twentytwenty-container twentytwenty-container-top21">
-            <div class="cmpcontent">
-              <img src="./images/baseline/seq_3340/ours_005.png">
-            </div>
-            <div class="cmpcontent">
-              <img src="./images/baseline/seq_3340/mvsplat.png">
-            </div>
-          </div>
-          <div class="twentytwenty-container twentytwenty-container-top31">
-            <div class="cmpcontent">
-              <img src="./images/baseline/pixelsplat/ours_000.png">
-            </div>
-            <div class="cmpcontent">
-              <img src="./images/baseline/pixelsplat/000_re.png">
-            </div>
-          </div>
-          <div class="twentytwenty-container twentytwenty-container-top41">
-            <div class="cmpcontent">
-              <img src="./images/baseline/pixelsplat/ours_002.png">
-            </div>
-            <div class="cmpcontent">
-              <img src="./images/baseline/pixelsplat/002.png">
-            </div>
-          </div>
-        </div>
-        <div class="fouritem">
-          <div class="twentytwenty-container twentytwenty-container-top12">
-            <div class="cmpcontent">
-              <img src="./images/baseline/seq_0382/ours.png">
-            </div>
-            <div class="cmpcontent">
-              <img src="./images/baseline/seq_0382/murf.png">
-            </div>
-          </div>
-          <div class="twentytwenty-container twentytwenty-container-top22">
-            <div class="cmpcontent">
-              <img src="./images/baseline/seq_0382/ours2.png">
-            </div>
-            <div class="cmpcontent">
-              <img src="./images/baseline/seq_0382/murf2.png">
-            </div>
-          </div>
-          <div class="twentytwenty-container twentytwenty-container-top32">
-            <div class="cmpcontent">
-              <img src="./images/baseline/seq_7440/render_002.png">
-            </div>
-            <div class="cmpcontent">
-              <img src="./images/baseline/seq_7440/edus.png">
-            </div>
-          </div>
-          <div class="twentytwenty-container twentytwenty-container-top42">
-            <div class="cmpcontent">
-              <img src="./images/baseline/seq_1741/ours.png">
-            </div>
-            <div class="cmpcontent">
-              <img src="./images/baseline/seq_1741/edus.png">
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<script>
-  $(window).on('load', function() {
-    bulmaCarousel.attach('#results-carousel-horizontal', {
-      slidesToScroll: 1,
-      slidesToShow: 1,
-      loop: true,
-      autoplay: true,
-    });
-
-    bulmaCarousel.attach('#results-carousel-vertical', {
-      slidesToScroll: 2,
-      slidesToShow: 2,
-      loop: true,
-      autoplay: true,
-    });
-
-    bulmaCarousel.attach('#results-carousel-vertical2', {
-      slidesToScroll: 1,
-      slidesToShow: 3,
-      loop: true,
-      autoplay: true,
-    });
-    bulmaCarousel.attach('#results-carousel-vertical3', {
-      slidesToScroll: 1,
-      slidesToShow: 3,
-      loop: true,
-      autoplay: true,
-    });
-
-    $(".twentytwenty-container-top11").twentytwenty({
-      before_label: 'Ours',
-      after_label: 'MVSplat',
-      default_offset_pct: 0.75,
-    });
-    $(".twentytwenty-container-top21").twentytwenty({
-      before_label: 'Ours',
-      after_label: 'MVSplat',
-      default_offset_pct: 0.75,
-    });
-    $(".twentytwenty-container-top12").twentytwenty({
-      before_label: 'Ours',
-      after_label: 'Murf',
-      default_offset_pct: 0.75,
-    });
-    $(".twentytwenty-container-top22").twentytwenty({
-      before_label: 'Ours',
-      after_label: 'Murf',
-      default_offset_pct: 0.75,
-    });
-    $(".twentytwenty-container-top31").twentytwenty({
-      before_label: 'Ours',
-      after_label: 'PixelSplat',
-      default_offset_pct: 0.75,
-    });
-    $(".twentytwenty-container-top32").twentytwenty({
-      before_label: 'Ours',
-      after_label: 'EDUS',
-      default_offset_pct: 0.75,
-    });
-    $(".twentytwenty-container-top41").twentytwenty({
-      before_label: 'Ours',
-      after_label: 'PixelSplat',
-      default_offset_pct: 0.75,
-    });
-    $(".twentytwenty-container-top42").twentytwenty({
-      before_label: 'Ours',
-      after_label: 'EDUS',
-      default_offset_pct: 0.75,
-    });
-  });
-</script>
-
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Method. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">How it works</h2>
+        <h2 class="title is-3">EVolSplat4D Architecture</h2>
         <div class="content has-text-justified">
-
+          <img id="method" width="100%" src="./images/pipeline_svg.svg" alt="Marigold training scheme" />
           <p>
-            EVolSplat learns to predict 3D Gaussians of urban scenes in a feed-forward manner. Given a set of posed images
-             $\{I_n\}_{i=1}^N$, we first leverage off-the-shelf metric depth estimators to provide depth estimations $\{D_n\}_{n=1}^N$. 
-             The depth maps are unprojected and accumulated into a global point cloud $P$, which is fed into a sparse 3D CNN for 
-             extracting a feature volume $F$. We leverage the 3D context of $F$ to predict the geometry attributes of 3D Gaussians. 
-             Furthermore, we project the 3D Gaussians to the nearest reference views to retrieve 2D context, including color window
-              $\{c_k\}_{k=1}^K$ and visibility maps $\{v_k\}_{k=1}^K$ to decode their color. To model far regions, we propose 
-              a generalizable hemisphere Gaussian model, where the geometry is fixed and the color is predicted in a similar manner 
-              as the foreground volume.
+            We reconstruct urban scenes by disentangling them as close-range volume, dynamic
+            actors, and distant view, predicting 4D Gaussians of urban scenes in a feed-forward manner. a) Given a set of images and
+            sparse lidar points, we initialize our model with the pretrained depth model and DINO feature extractor. b) In
+            close-range volume, we leverage the 3D context of $\psi^\text{3D}$ predict the geometry attributes of 3D Gaussians and
+            project the 3D Gaussians to the reference views to retrieve 2D context, including color window and visibility maps to
+            decode their color. c) For dynamic actors, we model each instance using an instance-wise canonical space and perform
+            generalizable reconstitution through our proposed motion-adjusted IBR module. d) To model far regions, we employ a 2D
+            U-Net backbone with cross-view self-attention to aggregate information from nearby reference images and predict
+            per-pixel Gaussians. e) The composition of the three parts leads to our full model for the unbounded scenes.
           </p>
 
-          <img id="method" width="100%" src="./images/pipeline_v3.svg" alt="Marigold training scheme"/>
+
         </div>
       </div>
     </div>
@@ -393,43 +235,443 @@
   </div>
 </section>
 
-<br>
+
 <h3 class="title has-text-centered">
-  Results Gallery
+  Comparison with Feed-Forward Methods
 </h3>
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
-      <div id="results-carousel-vertical2" class="carousel results-carousel">
-          <div class="cmpcontent">
-            <video poster="" id="steve1" autoplay controls muted loop playsinline width="100%">
-              <source src="./video/kitti/7840.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-          <div class="cmpcontent">
-            <video poster="" id="steve2" autoplay controls muted loop playsinline width="100%">
-              <source src="./video/kitti/0922.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-          <div class="cmpcontent">
-            <video poster="" id="steve" autoplay controls muted loop playsinline width="100%">
-              <source src="./video/kitti/5970.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
+      <!-- 前2行：3列布局 -->
+      <div class="section-title has-text-centered" style="margin-bottom: 10px;">
+        <h3 class="title is-4">Dynamic Scenes</h3>
       </div>
-      <div class="section-title has-text-centered" style="margin-top: 15px;">
-        <h2 class="title is-5"> Feed-forward Reconstruction on KITTI-360</h2>
+      <div class="fouritem-container">
+        <div class="fouritem">
+          <!-- 第一行第1列：Ours vs Storm -->
+          <div class="twentytwenty-container twentytwenty-container-top11">
+            <div class="cmpcontent">
+              <img src="./images/baseline/dynamic/ours_001.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/baseline/dynamic/storm_001.png">
+            </div>
+          </div>
+          <!-- 第一行第2列：Ours vs DriveRecon -->
+          <div class="twentytwenty-container twentytwenty-container-top21">
+            <div class="cmpcontent">
+              <img src="./images/baseline/dynamic/ours_002.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/baseline/dynamic/storm_002.png">
+            </div>
+          </div>
+          <!-- 第一行第3列：Ours vs Ours -->
+          <div class="twentytwenty-container twentytwenty-container-top31">
+            <div class="cmpcontent">
+              <img src="./images/baseline/dynamic/ours_003.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/baseline/dynamic/storm_003.png">
+            </div>
+          </div>
+
+          <!-- 第二行第1列：Ours vs Storm -->
+          <div class="twentytwenty-container twentytwenty-container-top12">
+            <div class="cmpcontent">
+              <img src="./images/baseline/dynamic/ours_001.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/baseline/dynamic/driverecon_001.png">
+            </div>
+          </div>
+          <!-- 第二行第2列：Ours vs DriveRecon -->
+          <div class="twentytwenty-container twentytwenty-container-top22">
+            <div class="cmpcontent">
+              <img src="./images/baseline/dynamic/ours_002.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/baseline/dynamic/driverecon_002.png">
+            </div>
+          </div>
+          <!-- 第二行第3列：Ours vs Ours -->
+          <div class="twentytwenty-container twentytwenty-container-top32">
+            <div class="cmpcontent">
+              <img src="./images/baseline/dynamic/ours_003.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/baseline/dynamic/driverecon_003.png">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 第3-4行：独立的2列布局容器 -->
+      <div class="section-title has-text-centered" style="margin-top: 20px; margin-bottom: 10px;">
+        <h3 class="title is-4">Static Scenes</h3>
+      </div>
+      <div class="twoitem-container">
+        <div class="twoitem">
+          <!-- 第三行第1列 -->
+          <div class="twentytwenty-container twentytwenty-container-top13">
+            <div class="cmpcontent">
+              <img src="./images/baseline/static/seq_1741/ours.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/baseline/static/seq_1741/mvsplat_001.png">
+            </div>
+          </div>
+          <!-- 第三行第2列 -->
+          <div class="twentytwenty-container twentytwenty-container-top23">
+            <div class="cmpcontent">
+              <img src="./images/baseline/static/seq_3340/ours_005.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/baseline/static/seq_3340/mvsplat.png">
+            </div>
+          </div>
+
+          <!-- 第四行第1列 -->
+          <div class="twentytwenty-container twentytwenty-container-top14">
+            <div class="cmpcontent">
+              <img src="./images/baseline/static/seq_7440/render_002.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/baseline/static/seq_7440/edus.png">
+            </div>
+          </div>
+          <!-- 第四行第2列 -->
+          <div class="twentytwenty-container twentytwenty-container-top24">
+            <div class="cmpcontent">
+              <img src="./images/baseline/static/seq_0382/ours.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/baseline/static/seq_0382/murf.png">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 视频对比轮播 - 整合在同一个block中 -->
+      <div class="section-title has-text-centered" style="margin-top: 30px; margin-bottom: 15px;">
+        <h3 class="title is-4">Video Comparison</h3>
+      </div>
+      <div class="video-comparison-container">
+        <div id="results-carousel-comparison" class="carousel results-carousel">
+
+
+          <!-- 视频3: waymo_comparison_0 -->
+          <div class="item">
+            <video poster="" autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+              <source src="./video/comparision_video/waymo_comparison_0.mp4" type="video/mp4">
+            </video>
+          </div>
+          
+          <!-- 视频4: waymo_comparison_3 -->
+          <div class="item">
+            <video poster="" autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+              <source src="./video/comparision_video/waymo_comparison_3.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <!-- 视频1: comparison_1 -->
+          <div class="item">
+            <video poster="" autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+              <source src="./video/comparision_video/comparison_1.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <!-- 视频2: comparison_2 -->
+          <div class="item">
+            <video poster="" autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
+              <source src="./video/comparision_video/comparison_2.mp4" type="video/mp4">
+            </video>
+          </div>
+
+        
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<style>
+  /* 容器最大宽度，居中显示 */
+  .fouritem-container {
+    max-width: 1000px;
+    /* 适应3列布局，更紧凑 */
+    margin: 0 auto;
+    /* 居中显示 */
+    padding: 0 5px;
+  }
+
+  /* 第3-4行：2列容器，总宽度与3列容器相同 */
+  .twoitem-container {
+    max-width: 1000px;
+    /* 与3列容器宽度一致 */
+    margin: 0 auto;
+    /* 居中显示 */
+    padding: 0 5px;
+  }
+
+  /* 视频容器与图像容器保持相同宽度 */
+  .video-comparison-container {
+    max-width: 1000px;
+    /* 与图像容器宽度一致 */
+    margin: 0 auto;
+    /* 居中显示 */
+    padding: 0 5px;
+  }
+
+  /* 让 fouritem 变成2行3列的网格布局 */
+  .fouritem {
+    display: grid;
+    /* 使用 Grid 布局 */
+    grid-template-columns: 1fr 1fr 1fr;
+    /* 3列，每列平分空间 */
+    grid-template-rows: auto auto;
+    /* 2行，高度自适应 */
+    gap: 3px;
+    /* 行列之间的间距，更紧凑 */
+    width: 100%;
+  }
+
+  /* 让 twoitem 变成2行2列的网格布局 */
+  .twoitem {
+    display: grid;
+    /* 使用 Grid 布局 */
+    grid-template-columns: 1fr 1fr;
+    /* 2列，每列平分空间 */
+    grid-template-rows: auto auto;
+    /* 2行，高度自适应 */
+    gap: 3px;
+    /* 行列之间的间距，更紧凑 */
+    width: 100%;
+  }
+
+  /* 确保每个对比图组件自适应但不超过原始尺寸 */
+  .fouritem .twentytwenty-container {
+    width: 100%;
+    min-width: 0;
+    /* 防止内容溢出 */
+    max-width: 100%;
+  }
+
+  .twentytwenty-container img {
+    max-width: 480px;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+
+  /* Feed-Forward Results Gallery：视频之间的间距 */
+  #results-carousel-gallery .item {
+    padding: 0 5px;
+  }
+
+  /* Waymo & PandaSet：视频之间的间距 */
+  #results-carousel-waymo-pandaset .item {
+    padding: 0 5px;
+  }
+
+  /* 2列视频网格布局 */
+  .video-grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+</style>
+
+<script>
+  $(window).on('load', function() {
+    // 初始化TwentyTwenty对比容器
+    // 第一行（3列）
+    $(".twentytwenty-container-top11").twentytwenty({
+      before_label: 'Ours',
+      after_label: 'Storm',
+      default_offset_pct: 0.5,
+    });
+    $(".twentytwenty-container-top21").twentytwenty({
+      before_label: 'Ours',
+      after_label: 'Storm',
+      default_offset_pct: 0.5,
+    });
+    $(".twentytwenty-container-top31").twentytwenty({
+      before_label: 'Ours',
+      after_label: 'Storm',
+      default_offset_pct: 0.5,
+    });
+    
+    // 第二行（3列）
+    $(".twentytwenty-container-top12").twentytwenty({
+      before_label: 'Ours',
+      after_label: 'DriveRecon',
+      default_offset_pct: 0.5,
+    });
+    $(".twentytwenty-container-top22").twentytwenty({
+      before_label: 'Ours',
+      after_label: 'DriveRecon',
+      default_offset_pct: 0.5,
+    });
+    $(".twentytwenty-container-top32").twentytwenty({
+      before_label: 'Ours',
+      after_label: 'DriveRecon',
+      default_offset_pct: 0.5,
+    });
+
+    // 第三行（2列，每列更宽）
+    $(".twentytwenty-container-top13").twentytwenty({
+      before_label: 'Ours',
+      after_label: 'MVSPlat',
+      default_offset_pct: 0.5,
+    });
+    $(".twentytwenty-container-top23").twentytwenty({
+      before_label: 'Ours',
+      after_label: 'MVSPlat',
+      default_offset_pct: 0.5,
+    });
+
+    // 第四行（2列，每列更宽）
+    $(".twentytwenty-container-top14").twentytwenty({
+      before_label: 'Ours',
+      after_label: 'EDUS',
+      default_offset_pct: 0.5,
+    });
+    $(".twentytwenty-container-top24").twentytwenty({
+      before_label: 'Ours',
+      after_label: 'MuRF',
+      default_offset_pct: 0.5,
+    });
+
+    // 初始化视频对比轮播
+    bulmaCarousel.attach('#results-carousel-comparison', {
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      loop: true,
+      autoplay: false,
+      duration: 200,
+    });
+
+    // 初始化 Feed-Forward Results Gallery 轮播
+    // 一次显示2个视频，每次滚动1个
+    bulmaCarousel.attach('#results-carousel-gallery', {
+      slidesToScroll: 1,
+      slidesToShow: 2,
+      loop: true,
+      autoplay: false,
+      duration: 200,
+    });
+
+    // 初始化 Waymo & PandaSet 轮播
+    // 一次显示2个视频，每次滚动1个
+    bulmaCarousel.attach('#results-carousel-waymo-pandaset', {
+      slidesToScroll: 1,
+      slidesToShow: 2,
+      loop: true,
+      autoplay: false,
+      duration: 200,
+    });
+  });
+</script>
+
+
+
+<br>
+<h3 class="title has-text-centered">
+  Feed-Forward Results Gallery
+</h3>
 <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="video-comparison-container">
+        <div id="results-carousel-gallery" class="carousel results-carousel">
+   
+
+          <!-- 视频3 -->
+          <div class="item">
+            <video poster="" autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+              <source src="./video/kitti/kitti_0005_257_297.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <!-- 视频4 -->
+          <div class="item">
+            <video poster="" autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+              <source src="./video/kitti/kitti_0007_509_549.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <!-- 视频5 -->
+          <div class="item">
+            <video poster="" autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+              <source src="./video/kitti/kitti_0011_268_308.mp4" type="video/mp4">
+            </video>
+          </div>
+
+            <!-- 视频1 -->
+            <div class="item">
+              <video poster="" autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+                <source src="./video/kitti/5970.mp4" type="video/mp4">
+              </video>
+            </div>
+            
+            <!-- 视频2 -->
+            <div class="item">
+              <video poster="" autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+                <source src="./video/kitti/0922.mp4" type="video/mp4">
+              </video>
+            </div>
+
+        </div>
+        <div class="section-title has-text-centered" style="margin-top: 15px;">
+          <h2 class="title is-5"> Feed-forward Results on KITTI & KITTI-360</h2>
+        </div>
+      </div>
+
+      <!-- Waymo & PandaSet 视频展示 -->
+      <div class="video-comparison-container" style="margin-top: 30px;">
+        <div id="results-carousel-waymo-pandaset" class="carousel results-carousel">
+          <!-- 视频1: PandaSet -->
+          <div class="item">
+            <video poster="" autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+              <source src="./video/waymo/pandaset_001_018_078.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <!-- 视频2: PandaSet -->
+          <div class="item">
+            <video poster="" autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+              <source src="./video/waymo/pandaset_016_000_060.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <!-- 视频3: Waymo -->
+          <div class="item">
+            <video poster="" autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+              <source src="./video/waymo/scene_140_040_100.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <!-- 视频4: Waymo -->
+          <div class="item">
+            <video poster="" autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+              <source src="./video/waymo/scene_016_000_060.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="section-title has-text-centered" style="margin-top: 15px;">
+          <h2 class="title is-5"> Feed-forward Results on Waymo & PandaSet (Out-of-domain dataset)</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel-vertical3" class="carousel results-carousel">
@@ -459,21 +701,21 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
-<section class="section" id="BibTeX">
+<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@InProceedings{Miao_2025_CVPR,
       author    = {Sheng Miao, Jiaxin Huang, Dongfeng Bai, Xu Yan, Hongyu Zhou, Yue Wang, Bingbing Liu, Andreas Geiger and Yiyi Liao},
-      title     = {EVolSplat: Efficient Volume-based Gaussian Splatting for Urban View Synthesis},
+      title     = {EVolSplat4D: Efficient Volume-based Gaussian Splatting for Urban View Synthesis},
       booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
       month     = {June},
       year      = {2025}
   }</code></pre>
   </div>
-</section>
+</section> -->
 
 <footer class="footer pt-4 pb-0">
   <div class="container">
