@@ -181,11 +181,11 @@
         <img id="teaser" width="100%" src="./images/teaser.png" alt="Teaser image demonstrating Marigold depth estimation."/>
         <div class="content has-text-justified">
           <p>
-            We propose EVolSplat4D, a unified feed-forward reconstruction model tailored for static & dynamic urban scenes that
-            achieves real-time rendering speeds. Leveraging both camera and LiDAR cues as inputs, EVolSplat4D can produce novel,
-            photo-realistic renderings in a very short time (approximately 1.3s), achieving quality that is comparable to
-            time-consuming per-scene optimization methods. EVolSplat4D also supports various downstream applications, including
-            high-fidelity scene editing and scene decomposition.
+            We propose EVolSplat4D, a unified feed-forward 3D Gaussian Splatting framework tailored for static \& dynamic urban scenes that achieves
+            real-time rendering speeds. Leveraging both camera and tracked 3D bounding box as inputs, EVolSplat4D completes scene
+            reconstruction in approximately 1.3 seconds, achieving photo-realistic quality comparable to time-consuming per-scene
+            optimization methods. EvolSplat4D also supports various downstream applications, including high-fidelity scene editing
+            and scene decomposition.
           </p>
         </div>
       </div>
@@ -214,17 +214,17 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">EVolSplat4D Architecture</h2>
         <div class="content has-text-justified">
-          <img id="method" width="100%" src="./images/pipeline_svg.svg" alt="Marigold training scheme" />
+          <img id="method" width="100%" src="./images/pipeline.svg" alt="Marigold training scheme" />
           <p>
-            We reconstruct urban scenes by disentangling them as close-range volume, dynamic
-            actors, and distant view, predicting 4D Gaussians of urban scenes in a feed-forward manner. a) Given a set of images and
-            sparse lidar points, we initialize our model with the pretrained depth model and DINO feature extractor. b) In
-            close-range volume, we leverage the 3D context of $\psi^\text{3D}$ predict the geometry attributes of 3D Gaussians and
-            project the 3D Gaussians to the reference views to retrieve 2D context, including color window and visibility maps to
-            decode their color. c) For dynamic actors, we model each instance using an instance-wise canonical space and perform
-            generalizable reconstitution through our proposed motion-adjusted IBR module. d) To model far regions, we employ a 2D
-            U-Net backbone with cross-view self-attention to aggregate information from nearby reference images and predict
-            per-pixel Gaussians. e) The composition of the three parts leads to our full model for the unbounded scenes.
+            We reconstruct urban scenes by disentangling them as close-range volume, dynamic actors, and distant view, predicting 4D
+            Gaussians of urban scenes in a feed-forward manner. a) Given a set of images, we initialize our model with the
+            pretrained depth model and DINO feature extractor. b) In close-range volume, we leverage the 3D context of
+            $\mathcal{F}^\text{3D}$ to predict the geometry attributes of 3D Gaussians and project the 3D Gaussians to the reference
+            views to retrieve 2D context, including color window and visibility maps to decode their color. c) For dynamic actors,
+            we model each instance using an instance-wise canonical space and perform generalizable reconstitution through our
+            proposed motion-adjusted IBR module. d) To model far regions, we employ a 2D U-Net backbone with cross-view
+            self-attention to aggregate information from nearby reference images and predict per-pixel Gaussians. e) The composition
+            of the three parts leads to our full model for the unbounded scenes.
           </p>
 
 
