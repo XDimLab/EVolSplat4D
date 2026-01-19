@@ -178,7 +178,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Overview</h2>
-        <img id="teaser" width="100%" src="./images/teaser.png" alt="Teaser image demonstrating Marigold depth estimation."/>
+        <img id="teaser" width="100%" src="./images/teaser.svg" alt="Teaser image demonstrating Marigold depth estimation."/>
         <div class="content has-text-justified">
           <p>
             We propose EVolSplat4D, a unified feed-forward 3D Gaussian Splatting framework tailored for static \& dynamic urban scenes that achieves
@@ -197,7 +197,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/H5g8sQ8Rppg?si=DYskJVTmvkCpOyVW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe width="1280" height="720" src="https://www.youtube.com/embed/cEMsC57q_uU?si=1uVlmBajVXDb_1-8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -214,17 +214,17 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">EVolSplat4D Architecture</h2>
         <div class="content has-text-justified">
-          <img id="method" width="100%" src="./images/pipeline.svg" alt="Marigold training scheme" />
+          <img id="method" width="100%" src="./images/pipeline_web.svg" alt="Marigold training scheme" />
           <p>
-            We reconstruct urban scenes by disentangling them as close-range volume, dynamic actors, and distant view, predicting 4D
-            Gaussians of urban scenes in a feed-forward manner. a) Given a set of images, we initialize our model with the
+            We reconstruct urban scenes by disentangling them as close-range volume, dynamic actors, and far-field scenery,
+            predicting 3D Gaussians of each in a feed-forward manner. a) Given a set of images, we initialize our model with the
             pretrained depth model and DINO feature extractor. b) In close-range volume, we leverage the 3D context of
             $\mathcal{F}^\text{3D}$ to predict the geometry attributes of 3D Gaussians and project the 3D Gaussians to the reference
             views to retrieve 2D context, including color window and visibility maps to decode their color. c) For dynamic actors,
-            we model each instance using an instance-wise canonical space and perform generalizable reconstitution through our
-            proposed motion-adjusted IBR module. d) To model far regions, we employ a 2D U-Net backbone with cross-view
-            self-attention to aggregate information from nearby reference images and predict per-pixel Gaussians. e) The composition
-            of the three parts leads to our full model for the unbounded scenes.
+            we model each instance using an instance-wise canonical space and perform feed-forward reconstitution through our
+            proposed motion-adjusted IBR module. d) To model far-range regions, we employ a 2D U-Net backbone
+            $\mathcal{F}^\text{2D}$ with cross-view self-attention to aggregate information from nearby reference images and predict
+            per-pixel Gaussians. e) The composition of the three parts leads to our full model for unbounded scenes.
           </p>
 
 
@@ -628,7 +628,7 @@
 
         </div>
         <div class="section-title has-text-centered" style="margin-top: 15px;">
-          <h2 class="title is-5"> Feed-forward Results on KITTI & KITTI-360</h2>
+          <h2 class="title is-5"> Feed-Forward Results on KITTI & KITTI-360</h2>
         </div>
       </div>
 
@@ -664,7 +664,7 @@
           </div>
         </div>
         <div class="section-title has-text-centered" style="margin-top: 15px;">
-          <h2 class="title is-5"> Feed-forward Results on Waymo & PandaSet (Out-of-domain dataset)</h2>
+          <h2 class="title is-5"> Feed-Forward Results on Waymo & PandaSet (Out-of-domain dataset)</h2>
         </div>
       </div>
     </div>
