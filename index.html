@@ -59,7 +59,7 @@
 
 <section class="hero">
   <div class="hero-body">
-    <div class="container is-max-desktop">
+    <div class="container is-max-fullhd">
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">EVolSplat4D: Efficient Volume-based Gaussian Splatting for 4D Urban Scene Synthesis</h1>
@@ -173,10 +173,10 @@
 
 
 <section class="section pt-0">
-  <div class="container is-max-desktop">
+  <div class="container is-max-desktop container-medium">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column">
         <h2 class="title is-3">Overview</h2>
         <img id="teaser" width="100%" src="./images/teaser.svg" alt="Teaser image demonstrating Marigold depth estimation."/>
         <div class="content has-text-justified">
@@ -194,7 +194,7 @@
 
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
           <iframe width="1280" height="720" src="https://www.youtube.com/embed/cEMsC57q_uU?si=1uVlmBajVXDb_1-8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -208,10 +208,10 @@
 
 
 <section class="section">
-  <div class="container is-max-desktop">
+  <div class="container is-max-desktop container-medium">
     <!-- Method. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column">
         <h2 class="title is-3">EVolSplat4D Architecture</h2>
         <div class="content has-text-justified">
           <img id="method" width="100%" src="./images/pipeline_web.svg" alt="Marigold training scheme" />
@@ -313,8 +313,27 @@
       </div>
       <div class="twoitem-container">
         <div class="twoitem">
-          <!-- 第三行第1列 -->
+          <!-- 第一行第1列：Ours vs EDUS -->
           <div class="twentytwenty-container twentytwenty-container-top13">
+            <div class="cmpcontent">
+              <img src="./images/baseline/static/seq_7440/render_002.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/baseline/static/seq_7440/edus.png">
+            </div>
+          </div>
+          <!-- 第一行第2列：Ours vs MuRF -->
+          <div class="twentytwenty-container twentytwenty-container-top23">
+            <div class="cmpcontent">
+              <img src="./images/baseline/static/seq_0382/ours.png">
+            </div>
+            <div class="cmpcontent">
+              <img src="./images/baseline/static/seq_0382/murf.png">
+            </div>
+          </div>
+
+          <!-- 第二行第1列：Ours vs MVSplat -->
+          <div class="twentytwenty-container twentytwenty-container-top14">
             <div class="cmpcontent">
               <img src="./images/baseline/static/seq_1741/ours.png">
             </div>
@@ -322,8 +341,8 @@
               <img src="./images/baseline/static/seq_1741/mvsplat_001.png">
             </div>
           </div>
-          <!-- 第三行第2列 -->
-          <div class="twentytwenty-container twentytwenty-container-top23">
+          <!-- 第二行第2列：Ours vs MVSplat -->
+          <div class="twentytwenty-container twentytwenty-container-top24">
             <div class="cmpcontent">
               <img src="./images/baseline/static/seq_3340/ours_005.png">
             </div>
@@ -332,22 +351,22 @@
             </div>
           </div>
 
-          <!-- 第四行第1列 -->
-          <div class="twentytwenty-container twentytwenty-container-top14">
+          <!-- 第三行第1列：Ours vs DepthSplat -->
+          <div class="twentytwenty-container twentytwenty-container-top15">
             <div class="cmpcontent">
-              <img src="./images/baseline/static/seq_7440/render_002.png">
+              <img src="./images/baseline/static/seq_1741/ours.png">
             </div>
             <div class="cmpcontent">
-              <img src="./images/baseline/static/seq_7440/edus.png">
+              <img src="./images/baseline/static/seq_1741/depthsplat.png">
             </div>
           </div>
-          <!-- 第四行第2列 -->
-          <div class="twentytwenty-container twentytwenty-container-top24">
+          <!-- 第三行第2列：Ours vs AnySplat -->
+          <div class="twentytwenty-container twentytwenty-container-top25">
             <div class="cmpcontent">
-              <img src="./images/baseline/static/seq_0382/ours.png">
+              <img src="./images/baseline/static/seq_7740_02/ours.png">
             </div>
             <div class="cmpcontent">
-              <img src="./images/baseline/static/seq_0382/murf.png">
+              <img src="./images/baseline/static/seq_7740_02/anysplat.png">
             </div>
           </div>
         </div>
@@ -371,7 +390,7 @@
           <!-- 视频4: waymo_comparison_3 -->
           <div class="item">
             <video poster="" autoplay controls muted loop playsinline style="width: 100%; height: auto; display: block;">
-              <source src="./video/comparision_video/waymo_comparison_3.mp4" type="video/mp4">
+              <source src="./video/comparision_video/waymo_comparison_4.mp4" type="video/mp4">
             </video>
           </div>
 
@@ -397,18 +416,30 @@
 </section>
 
 <style>
+  /* 自定义更宽的容器 */
+  .container-wider {
+    max-width: 1600px !important;
+    margin: 0 auto;
+  }
+
+  /* 中等宽度容器 (Overview & Architecture) */
+  .container-medium {
+    max-width: 1050px !important;
+    margin: 0 auto;
+  }
+
   /* 容器最大宽度，居中显示 */
   .fouritem-container {
-    max-width: 1000px;
+    max-width: 1100px;
     /* 适应3列布局，更紧凑 */
     margin: 0 auto;
     /* 居中显示 */
-    padding: 0 5px;
+    padding: 0 10px;
   }
 
   /* 第3-4行：2列容器，总宽度与3列容器相同 */
   .twoitem-container {
-    max-width: 1000px;
+    max-width: 1100px;
     /* 与3列容器宽度一致 */
     margin: 0 auto;
     /* 居中显示 */
@@ -417,7 +448,7 @@
 
   /* 视频容器与图像容器保持相同宽度 */
   .video-comparison-container {
-    max-width: 1000px;
+    max-width: 1100px;
     /* 与图像容器宽度一致 */
     margin: 0 auto;
     /* 居中显示 */
@@ -437,14 +468,14 @@
     width: 100%;
   }
 
-  /* 让 twoitem 变成2行2列的网格布局 */
+  /* 让 twoitem 变成多行2列的网格布局 */
   .twoitem {
     display: grid;
     /* 使用 Grid 布局 */
     grid-template-columns: 1fr 1fr;
     /* 2列，每列平分空间 */
-    grid-template-rows: auto auto;
-    /* 2行，高度自适应 */
+    grid-template-rows: auto auto auto;
+    /* 3行，高度自适应 */
     gap: 3px;
     /* 行列之间的间距，更紧凑 */
     width: 100%;
@@ -523,27 +554,39 @@
       default_offset_pct: 0.5,
     });
 
-    // 第三行（2列，每列更宽）
+    // 第一行（2列）：EDUS 和 MuRF
     $(".twentytwenty-container-top13").twentytwenty({
-      before_label: 'Ours',
-      after_label: 'MVSPlat',
-      default_offset_pct: 0.5,
-    });
-    $(".twentytwenty-container-top23").twentytwenty({
-      before_label: 'Ours',
-      after_label: 'MVSPlat',
-      default_offset_pct: 0.5,
-    });
-
-    // 第四行（2列，每列更宽）
-    $(".twentytwenty-container-top14").twentytwenty({
       before_label: 'Ours',
       after_label: 'EDUS',
       default_offset_pct: 0.5,
     });
-    $(".twentytwenty-container-top24").twentytwenty({
+    $(".twentytwenty-container-top23").twentytwenty({
       before_label: 'Ours',
       after_label: 'MuRF',
+      default_offset_pct: 0.5,
+    });
+
+    // 第二行（2列）：MVSplat
+    $(".twentytwenty-container-top14").twentytwenty({
+      before_label: 'Ours',
+      after_label: 'MVSplat',
+      default_offset_pct: 0.5,
+    });
+    $(".twentytwenty-container-top24").twentytwenty({
+      before_label: 'Ours',
+      after_label: 'MVSplat',
+      default_offset_pct: 0.5,
+    });
+
+    // 第三行（2列）：DepthSplat 和 AnySplat
+    $(".twentytwenty-container-top15").twentytwenty({
+      before_label: 'Ours',
+      after_label: 'DepthSplat',
+      default_offset_pct: 0.5,
+    });
+    $(".twentytwenty-container-top25").twentytwenty({
+      before_label: 'Ours',
+      after_label: 'AnySplat',
       default_offset_pct: 0.5,
     });
 
@@ -582,7 +625,7 @@
 
 <br>
 <h3 class="title has-text-centered">
-  Feed-Forward Results Gallery
+  Interpolated Results Gallery
 </h3>
 <section class="hero is-light is-small">
   <div class="hero-body">
